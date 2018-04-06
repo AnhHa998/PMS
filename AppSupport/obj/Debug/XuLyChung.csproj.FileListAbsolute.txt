@@ -1,0 +1,6 @@
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\AppSupport\bin\Debug\AppSupport.dll
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\AppSupport\bin\Debug\AppSupport.pdb
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\AppSupport\obj\Debug\XuLyChung.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\AppSupport\obj\Debug\AppSupport.dll
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\AppSupport\obj\Debug\AppSupport.pdb
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\AppSupport\obj\Debug\XuLyChung.csprojResolveAssemblyReference.cache

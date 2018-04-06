@@ -1,0 +1,10 @@
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Data\bin\Debug\PMS_Data.dll
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Data\bin\Debug\PMS_Data.pdb
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Data\bin\Debug\AppSupport.dll
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Data\bin\Debug\PMS_Object.dll
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Data\bin\Debug\AppSupport.pdb
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Data\bin\Debug\PMS_Object.pdb
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Data\obj\Debug\PMS_Data.csprojResolveAssemblyReference.cache
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Data\obj\Debug\PMS_Data.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Data\obj\Debug\PMS_Data.dll
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Data\obj\Debug\PMS_Data.pdb

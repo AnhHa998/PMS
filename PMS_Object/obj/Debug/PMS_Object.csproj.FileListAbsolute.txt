@@ -1,0 +1,6 @@
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Object\bin\Debug\PMS_Object.dll
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Object\bin\Debug\PMS_Object.pdb
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Object\obj\Debug\PMS_Object.csproj.CoreCompileInputs.cache
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Object\obj\Debug\PMS_Object.dll
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Object\obj\Debug\PMS_Object.pdb
+C:\Users\admin\Documents\MEGAsync\PMS_2018\PMS\PMS_Object\obj\Debug\PMS_Object.csprojResolveAssemblyReference.cache
