@@ -16,7 +16,7 @@ namespace PMS.Forms.HeThong
         ChucNang_Data _dataChucNang = new ChucNang_Data();
         LoaiChucNang_Data _dataLoaiChucNang = new LoaiChucNang_Data();
         ChucNang _cnDuocChon;
-        int _maLonNhat;
+        string _maLonNhat;
         #endregion
 
         public frmChucNang()
@@ -47,7 +47,7 @@ namespace PMS.Forms.HeThong
         }
         #endregion
 
-        private void frmChucNang_Load(object sender, System.EventArgs e)
+        private void frmChucNang_Load(object sender, EventArgs e)
         {
             #region Init loại chức năng
             AppRepositoryItemGridLookUpEdit.Init(repoLookupEditLoaiChucNang
@@ -59,27 +59,28 @@ namespace PMS.Forms.HeThong
             cboPhanLoai.EditValue = 1;
             #endregion
             #region Init repo chức năng
-            AppRepositoryItemGridLookUpEdit.Init(repoLookUpEditTenForm
+            AppRepositoryItemGridLookUpEdit.Init(repoGridLookUpEditTenForm
                 , new string[] { "Name", "FullName" }
-                , new string[] { "Name", "FullName" }
+                , new string[] { "Tên", "Đường dẫn" }
                 , new int[] { 150, 350 }
                 , "FullName", "Name", 530, 400);
-
-            repoLookUpEditTenForm.DataSource = Core.Manager.AppPlugin.Plugins; //bsChucNang;
+            repoGridLookUpEditTenForm.DataSource = Core.Manager.AppPlugin.Plugins;
             #endregion
             #region Init chức năng
             AppTreeList.Init(treeListChucNang
-                , new string[] { "TenChucNang", "TenForm", "ThuTu", "PhanLoai", "HinhAnh", "MdiForm", "AnhChup", "TrangThai" }
-                , new string[] { "Tên chức năng", "Vị trí", "Thứ tự", "Loại", "Biểu tượng", "MDI", "Ảnh chụp", "Trạng thái" }
-                , new int[] { 250, 300, 40, 40, 50, 30, 50, 40 }, "MaChucNang", "MaChucNangCha" );
-            treeListChucNang.Columns["TenForm"].ColumnEdit = repoLookUpEditTenForm;
+                , new string[] { "MaChucNang", "ModuleName", "GUIName", "Order", "PhanLoai", "HinhAnh", "AnhChup"
+                    , "MaGridView", "SelectStore", "InsertStore", "DeleteStore", "UpdateStore", "TrangThai" }
+                , new string[] { "Mã chức năng", "Tên chức năng", "Vị trí", "Thứ tự", "Loại", "Biểu tượng", "Ảnh chụp"
+                    , "GridView", "Store xem", "Store thêm", "Store xóa", "Store cập nhật", "Trạng thái" }
+                , new int[] { 120, 250, 300, 40, 40, 50, 50, 100, 100, 100, 100, 100, 40 }, "MaChucNang", "MaChucNangBacTren");
+            treeListChucNang.Columns["GUIName"].ColumnEdit = repoGridLookUpEditTenForm;
             treeListChucNang.Columns["PhanLoai"].ColumnEdit = repoLookupEditLoaiChucNang;
             treeListChucNang.Columns["HinhAnh"].ColumnEdit = repoImageEditHinhAnh;
             treeListChucNang.Columns["AnhChup"].ColumnEdit = repoImageEditHinhAnh;
             List<ChucNang> list = new ChucNang_Data().LayDuLieu();
             bsChucNang.DataSource = list;
             treeListChucNang.ExpandAll();
-            _maLonNhat = list[list.Count - 1].MaChucNang;
+            _maLonNhat = list[list.Count - 1].ModuleID;
             #endregion
         }
 
@@ -113,12 +114,12 @@ namespace PMS.Forms.HeThong
             {
                 ChucNang cn = new ChucNang();
                 //cn.TenChucNang = >> Tạo node trước, chỉnh sửa sau
-                _maLonNhat++;
-                cn.MaChucNang = _maLonNhat;
-                cn.ChucNangCha = (int)cboPhanLoai.EditValue == 1 ? null : _cnDuocChon;
-                cn.LoaiChucNang = _dataLoaiChucNang.LayDuLieu((int)cboPhanLoai.EditValue);
+                //_maLonNhat++;
+                //cn.MaChucNang = _maLonNhat;
+                cn.MaChucNangBacTren = (int)cboPhanLoai.EditValue == 1 ? null : _cnDuocChon.ModuleID;
+                cn.LoaiChucNang = _dataLoaiChucNang.LayDuLieu((string)cboPhanLoai.EditValue);
                 cn.TrangThai = true;
-                cn.ThuTu = 0;
+                cn.Order = 0;
                 cn.TrangThaiThayDoi = TrangThaiDuLieu.Them;
                 //cn.MdiForm = cboPhanLoai.EditValue.ToString() == "Item";
                 //cn.Validate();
@@ -149,7 +150,7 @@ namespace PMS.Forms.HeThong
             if (e.Node != null)
             {
                 List<ChucNang> list = bsChucNang.DataSource as List<ChucNang>;
-                _cnDuocChon = list.Find(cn => cn.MaChucNang == (int)e.Node.GetValue("MaChucNang"));
+                _cnDuocChon = list.Find(cn => cn.ModuleID == (string)e.Node.GetValue("MaChucNang"));
             }
         }
     }

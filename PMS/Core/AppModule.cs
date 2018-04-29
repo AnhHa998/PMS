@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Collections;
+﻿using System.Collections;
 
 namespace PMS.Core
 {
@@ -15,7 +12,7 @@ namespace PMS.Core
     /// </summary>
     public class AppModule
     {
-        public int Id { get; set; }
+        public string Id { get; set; }
         public string ModuleId { get; set; }
         public string Caption { get; set; }
         public string Type { get; set; }//Mdi, Popup

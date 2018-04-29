@@ -52,13 +52,14 @@ namespace XuLyGiaoDienDevExpress.ComboBox
         /// <param name="displayMember">Tên thuộc tính thể hiện</param>
         /// <param name="width">Chiều rộng popup</param>
         /// <param name="height">Chiều cao popup</param>
-        public static void InitGridLookUp(GridLookUpEdit grid, string[] showFields, string[] showFieldNames, int[] columnWidth, string valueMember, string displayMember, int width, int height)
+        public static void Init(GridLookUpEdit grid, string[] showFields, string[] showFieldNames, int[] columnWidth
+            , string valueMember, string displayMember, int width, int height, string nullText, object defaultValue)
         {
             //Show filter
             grid.Properties.View.OptionsView.ShowAutoFilterRow = true;
             grid.Properties.TextEditStyle = TextEditStyles.Standard;
             grid.Properties.PopupFilterMode = PopupFilterMode.Contains;
-            grid.Properties.NullText = string.Empty;
+            grid.Properties.NullText = nullText;
             grid.Properties.View.OptionsView.ColumnAutoWidth = true;
             grid.Properties.ValueMember = valueMember;
             grid.Properties.DisplayMember = displayMember;
@@ -76,21 +77,7 @@ namespace XuLyGiaoDienDevExpress.ComboBox
             }
 
             grid.Properties.PopupFormSize = new Size(width, height);
-
-            //int j = 0;  //Cách này buộc showField phải đúng thứ tự với field mặc định của grid
-            //for (int i = 0; i < grid.Properties.View.Columns.Count; i++)
-            //{
-            //    if(grid.Properties.View.Columns[i].FieldName.Equals(showFields[j]))
-            //    {
-            //        //grid.Properties.View.Columns.AddField(showFields[j]);
-            //        grid.Properties.View.Columns[showFields[j]].Visible = true;
-            //        grid.Properties.View.Columns[showFields[j]].Caption = showFieldNames[j];
-            //        grid.Properties.View.Columns[showFields[j]].OptionsFilter.AutoFilterCondition = AutoFilterCondition.Contains;
-            //        j++;
-            //    }
-            //    else grid.Properties.View.Columns[i].Visible = false;
-            //}
-
+            grid.EditValue = defaultValue;
         }
 
 

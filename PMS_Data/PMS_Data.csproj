@@ -42,6 +42,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Module_Data.cs" />
     <Compile Include="LoaiChucNang_Data.cs" />
     <Compile Include="PMSData.cs" />
     <Compile Include="CoSoDuLieu.cs" />

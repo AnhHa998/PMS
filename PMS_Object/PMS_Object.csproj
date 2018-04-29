@@ -30,6 +30,8 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="DevExpress.Data.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraGrid.v17.2, Version=17.2.4.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -45,21 +47,28 @@
     <Compile Include="GiangVien.cs" />
     <Compile Include="ChucNang.cs" />
     <Compile Include="HocVi.cs" />
+    <Compile Include="PMSEventArgs.cs" />
     <Compile Include="PMSObject.cs" />
     <Compile Include="PMSObject_Enum.cs" />
+    <Compile Include="PMSModule.cs" />
     <Compile Include="Quyen.cs" />
     <Compile Include="PhanQuyenChucNang.cs" />
     <Compile Include="PhanQuyenTaiKhoan.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="TaiKhoan.cs" />
     <Compile Include="UI_CheckedComboBoxEdit.cs" />
-    <Compile Include="UI_ComboBox.cs" />
+    <Compile Include="UI_Control.cs" />
+    <Compile Include="UI_ControlCheckedComboBoxEdit.cs" />
+    <Compile Include="UI_ControlGridLookupEdit.cs" />
     <Compile Include="UI_GridLookupEdit.cs" />
     <Compile Include="UI_GridView.cs" />
     <Compile Include="UI_GridViewAlignField.cs" />
     <Compile Include="UI_GridViewAlignHeader.cs" />
     <Compile Include="UI_GridViewComboBox.cs" />
     <Compile Include="UI_GridViewFormatDataField.cs" />
+    <Compile Include="UI_GridView_Repository.cs" />
+    <Compile Include="UI_RepositoryCheckedComboBoxEdit.cs" />
+    <Compile Include="UI_RepositoryGridLookupEdit.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

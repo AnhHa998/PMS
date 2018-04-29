@@ -49,10 +49,22 @@
             this.treeListChucNang = new DevExpress.XtraTreeList.TreeList();
             this.bsChucNang = new System.Windows.Forms.BindingSource(this.components);
             this.repoImageEditHinhAnh = new DevExpress.XtraEditors.Repository.RepositoryItemImageEdit();
-            this.repoLookUpEditTenForm = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repoGridLookUpEditTenForm = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
             this.layoutControlGroup1 = new DevExpress.XtraLayout.LayoutControlGroup();
             this.layoutControlItem1 = new DevExpress.XtraLayout.LayoutControlItem();
             this.toolTip = new DevExpress.Utils.ToolTipController(this.components);
+            this.repoGridLookUpEditGridView = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit1View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repoGridLookUpEditSelectStore = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit2View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repoGridLookUpEditInsertStore = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit3View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repoGridLookUpEditDeleteStore = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit4View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.repoGridLookUpEditUpdateStore = new DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit();
+            this.repositoryItemGridLookUpEdit5View = new DevExpress.XtraGrid.Views.Grid.GridView();
+            this.bsGridView = new System.Windows.Forms.BindingSource(this.components);
+            this.bsStore = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.barMng)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoLookupEditLoaiChucNang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.imgCollection)).BeginInit();
@@ -62,9 +74,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.treeListChucNang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsChucNang)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoImageEditHinhAnh)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repoLookUpEditTenForm)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoGridLookUpEditTenForm)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoGridLookUpEditGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoGridLookUpEditSelectStore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoGridLookUpEditInsertStore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit3View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoGridLookUpEditDeleteStore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit4View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoGridLookUpEditUpdateStore)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit5View)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsStore)).BeginInit();
             this.SuspendLayout();
             // 
             // barMng
@@ -230,7 +254,12 @@
             this.treeListChucNang.Name = "treeListChucNang";
             this.treeListChucNang.RepositoryItems.AddRange(new DevExpress.XtraEditors.Repository.RepositoryItem[] {
             this.repoImageEditHinhAnh,
-            this.repoLookUpEditTenForm});
+            this.repoGridLookUpEditTenForm,
+            this.repoGridLookUpEditGridView,
+            this.repoGridLookUpEditSelectStore,
+            this.repoGridLookUpEditInsertStore,
+            this.repoGridLookUpEditDeleteStore,
+            this.repoGridLookUpEditUpdateStore});
             this.treeListChucNang.Size = new System.Drawing.Size(657, 330);
             this.treeListChucNang.TabIndex = 4;
             this.treeListChucNang.FocusedNodeChanged += new DevExpress.XtraTreeList.FocusedNodeChangedEventHandler(this.treeListChucNang_FocusedNodeChanged);
@@ -243,12 +272,12 @@
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
             this.repoImageEditHinhAnh.Name = "repoImageEditHinhAnh";
             // 
-            // repoLookUpEditTenForm
+            // repoGridLookUpEditTenForm
             // 
-            this.repoLookUpEditTenForm.AutoHeight = false;
-            this.repoLookUpEditTenForm.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            this.repoGridLookUpEditTenForm.AutoHeight = false;
+            this.repoGridLookUpEditTenForm.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
             new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
-            this.repoLookUpEditTenForm.Name = "repoLookUpEditTenForm";
+            this.repoGridLookUpEditTenForm.Name = "repoGridLookUpEditTenForm";
             // 
             // layoutControlGroup1
             // 
@@ -268,6 +297,86 @@
             this.layoutControlItem1.Size = new System.Drawing.Size(661, 334);
             this.layoutControlItem1.TextSize = new System.Drawing.Size(0, 0);
             this.layoutControlItem1.TextVisible = false;
+            // 
+            // repoGridLookUpEditGridView
+            // 
+            this.repoGridLookUpEditGridView.AutoHeight = false;
+            this.repoGridLookUpEditGridView.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoGridLookUpEditGridView.DataSource = this.bsGridView;
+            this.repoGridLookUpEditGridView.Name = "repoGridLookUpEditGridView";
+            this.repoGridLookUpEditGridView.PopupView = this.repositoryItemGridLookUpEdit1View;
+            // 
+            // repositoryItemGridLookUpEdit1View
+            // 
+            this.repositoryItemGridLookUpEdit1View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit1View.Name = "repositoryItemGridLookUpEdit1View";
+            this.repositoryItemGridLookUpEdit1View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit1View.OptionsView.ShowGroupPanel = false;
+            // 
+            // repoGridLookUpEditSelectStore
+            // 
+            this.repoGridLookUpEditSelectStore.AutoHeight = false;
+            this.repoGridLookUpEditSelectStore.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoGridLookUpEditSelectStore.DataSource = this.bsStore;
+            this.repoGridLookUpEditSelectStore.Name = "repoGridLookUpEditSelectStore";
+            this.repoGridLookUpEditSelectStore.PopupView = this.repositoryItemGridLookUpEdit2View;
+            // 
+            // repositoryItemGridLookUpEdit2View
+            // 
+            this.repositoryItemGridLookUpEdit2View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit2View.Name = "repositoryItemGridLookUpEdit2View";
+            this.repositoryItemGridLookUpEdit2View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit2View.OptionsView.ShowGroupPanel = false;
+            // 
+            // repoGridLookUpEditInsertStore
+            // 
+            this.repoGridLookUpEditInsertStore.AutoHeight = false;
+            this.repoGridLookUpEditInsertStore.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoGridLookUpEditInsertStore.DataSource = this.bsStore;
+            this.repoGridLookUpEditInsertStore.Name = "repoGridLookUpEditInsertStore";
+            this.repoGridLookUpEditInsertStore.PopupView = this.repositoryItemGridLookUpEdit3View;
+            // 
+            // repositoryItemGridLookUpEdit3View
+            // 
+            this.repositoryItemGridLookUpEdit3View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit3View.Name = "repositoryItemGridLookUpEdit3View";
+            this.repositoryItemGridLookUpEdit3View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit3View.OptionsView.ShowGroupPanel = false;
+            // 
+            // repoGridLookUpEditDeleteStore
+            // 
+            this.repoGridLookUpEditDeleteStore.AutoHeight = false;
+            this.repoGridLookUpEditDeleteStore.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoGridLookUpEditDeleteStore.DataSource = this.bsStore;
+            this.repoGridLookUpEditDeleteStore.Name = "repoGridLookUpEditDeleteStore";
+            this.repoGridLookUpEditDeleteStore.PopupView = this.repositoryItemGridLookUpEdit4View;
+            // 
+            // repositoryItemGridLookUpEdit4View
+            // 
+            this.repositoryItemGridLookUpEdit4View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit4View.Name = "repositoryItemGridLookUpEdit4View";
+            this.repositoryItemGridLookUpEdit4View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit4View.OptionsView.ShowGroupPanel = false;
+            // 
+            // repoGridLookUpEditUpdateStore
+            // 
+            this.repoGridLookUpEditUpdateStore.AutoHeight = false;
+            this.repoGridLookUpEditUpdateStore.Buttons.AddRange(new DevExpress.XtraEditors.Controls.EditorButton[] {
+            new DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)});
+            this.repoGridLookUpEditUpdateStore.DataSource = this.bsStore;
+            this.repoGridLookUpEditUpdateStore.Name = "repoGridLookUpEditUpdateStore";
+            this.repoGridLookUpEditUpdateStore.PopupView = this.repositoryItemGridLookUpEdit5View;
+            // 
+            // repositoryItemGridLookUpEdit5View
+            // 
+            this.repositoryItemGridLookUpEdit5View.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus;
+            this.repositoryItemGridLookUpEdit5View.Name = "repositoryItemGridLookUpEdit5View";
+            this.repositoryItemGridLookUpEdit5View.OptionsSelection.EnableAppearanceFocusedCell = false;
+            this.repositoryItemGridLookUpEdit5View.OptionsView.ShowGroupPanel = false;
             // 
             // frmChucNang
             // 
@@ -291,9 +400,21 @@
             ((System.ComponentModel.ISupportInitialize)(this.treeListChucNang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bsChucNang)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.repoImageEditHinhAnh)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.repoLookUpEditTenForm)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoGridLookUpEditTenForm)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlGroup1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.layoutControlItem1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoGridLookUpEditGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit1View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoGridLookUpEditSelectStore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit2View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoGridLookUpEditInsertStore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit3View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoGridLookUpEditDeleteStore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit4View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repoGridLookUpEditUpdateStore)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.repositoryItemGridLookUpEdit5View)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bsStore)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -323,6 +444,18 @@
         private DevExpress.Utils.ToolTipController toolTip;
         private System.Windows.Forms.BindingSource bsChucNang;
         private DevExpress.XtraEditors.Repository.RepositoryItemImageEdit repoImageEditHinhAnh;
-        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repoLookUpEditTenForm;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repoGridLookUpEditTenForm;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repoGridLookUpEditGridView;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit1View;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repoGridLookUpEditSelectStore;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit2View;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repoGridLookUpEditInsertStore;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit3View;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repoGridLookUpEditDeleteStore;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit4View;
+        private DevExpress.XtraEditors.Repository.RepositoryItemGridLookUpEdit repoGridLookUpEditUpdateStore;
+        private DevExpress.XtraGrid.Views.Grid.GridView repositoryItemGridLookUpEdit5View;
+        private System.Windows.Forms.BindingSource bsGridView;
+        private System.Windows.Forms.BindingSource bsStore;
     }
 }

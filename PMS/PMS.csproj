@@ -87,6 +87,12 @@
     <Compile Include="Forms\HeThong\frmMain.designer.cs">
       <DependentUpon>frmMain.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\HeThong\frmNavigationEx.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HeThong\frmNavigationEx.designer.cs">
+      <DependentUpon>frmNavigationEx.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\HeThong\frmNhomQuyen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -99,12 +105,6 @@
     <Compile Include="Forms\HeThong\frmPhanQuyen.Designer.cs">
       <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Forms\HeThong\frmQuyen - Copy.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Forms\HeThong\frmQuyen - Copy.Designer.cs">
-      <DependentUpon>frmQuyen - Copy.cs</DependentUpon>
-    </Compile>
     <Compile Include="Forms\HeThong\frmQuyen.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +116,12 @@
     </Compile>
     <Compile Include="Forms\HeThong\frmThongTin.Designer.cs">
       <DependentUpon>frmThongTin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modules\ucGridLookupEdit.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Modules\ucGridLookupEdit.Designer.cs">
+      <DependentUpon>ucGridLookupEdit.cs</DependentUpon>
     </Compile>
     <Compile Include="Modules\ucTuDienDuLieu.cs">
       <SubType>UserControl</SubType>
@@ -134,20 +140,23 @@
     <EmbeddedResource Include="Forms\HeThong\frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HeThong\frmNavigationEx.resx">
+      <DependentUpon>frmNavigationEx.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmNhomQuyen.resx">
       <DependentUpon>frmNhomQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmPhanQuyen.resx">
       <DependentUpon>frmPhanQuyen.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Forms\HeThong\frmQuyen - Copy.resx">
-      <DependentUpon>frmQuyen - Copy.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmQuyen.resx">
       <DependentUpon>frmQuyen.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\HeThong\frmThongTin.resx">
       <DependentUpon>frmThongTin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modules\ucGridLookupEdit.resx">
+      <DependentUpon>ucGridLookupEdit.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modules\ucTuDienDuLieu.resx">
       <DependentUpon>ucTuDienDuLieu.cs</DependentUpon>

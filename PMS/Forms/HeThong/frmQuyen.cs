@@ -1,4 +1,4 @@
-﻿using DevExpress.Common.Grid;
+﻿using XuLyGiaoDienDevExpress.Grid;
 using DevExpress.XtraEditors;
 using PMS_Data;
 using PMS_Object;
@@ -15,7 +15,7 @@ namespace PMS.Forms.HeThong
         #region Hàm xử lý nghiệp vụ
         void ThaoTacDuLieu (object obj)
         {
-            Quyen q = (Quyen)obj;
+            PMSObject q = (PMSObject)obj;
             switch (q.TrangThaiThayDoi)
             {
                 case TrangThaiDuLieu.Them:

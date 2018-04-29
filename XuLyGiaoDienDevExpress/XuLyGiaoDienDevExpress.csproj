@@ -51,6 +51,7 @@
     <Compile Include="ComboBox\AppRepositoryItemGridLookUpEdit.cs" />
     <Compile Include="ComboBox\AppTreeList.cs" />
     <Compile Include="Grid\AppGridView.cs" />
+    <Compile Include="Grid\AutoHeightHelper.cs" />
     <Compile Include="Grid\BaseFormatter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

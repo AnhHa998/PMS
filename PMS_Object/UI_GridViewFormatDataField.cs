@@ -1,18 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using DevExpress.Utils;
 
 namespace PMS_Object
 {
     public class UI_GridViewFormatDataField
     {
-        /*
-        IDGridView varchar
-        FormatDataFields nvarchar
-        FormatType nvarchar
-        DisplayFormat nvarchar
-        */
+        string _IDGridView;
+        FormatType _formatDataFields;
+        string _formatType;
+        string _displayFormat;
     }
 }

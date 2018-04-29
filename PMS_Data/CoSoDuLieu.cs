@@ -48,9 +48,7 @@ namespace PMS_Data
         public static DataTable LayDanhSachThamSo(string strTenStore)
         {
             DataTable tbl = new DataTable();
-            List<SqlParameter> lstParameter = new List<SqlParameter>();
-            lstParameter.Add(new SqlParameter("@TenStore",strTenStore);
-            tbl = DataProvider.ExecQueryStore(strStoredDanhSachThamSo, ls);
+            tbl = DataProvider.ExecQueryStore(strStoredDanhSachThamSo, new SqlParameter("@TenStore", strTenStore));
             return tbl;
         }
 

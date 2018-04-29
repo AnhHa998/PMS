@@ -20,9 +20,9 @@ namespace PMS_Data
         protected override PMSObject PhanTichDataRow(DataRow dr)
         {
             LoaiChucNang lcn = new LoaiChucNang();
-            lcn.MaLoai = (int)XuLyKieuDuLieu.ThayTheNull(dr["MaLoai"], typeof(int));
+            lcn.MaLoai = (string)XuLyKieuDuLieu.ThayTheNull(dr["MaLoai"], typeof(string));
             lcn.TenLoai = (string)XuLyKieuDuLieu.ThayTheNull(dr["TenLoai"], typeof(string));
-            lcn.LoaiChucNangCha = LayDuLieu((int)(dr["LoaiChucNangCha"].ToString() == "" ? 0 : dr["LoaiChucNangCha"]));
+            lcn.LoaiChucNangBacTren = LayDuLieu((string)XuLyKieuDuLieu.ThayTheNull(dr["MaLoaiBacTren"],typeof(string)));
             return lcn;
         }
         #endregion
@@ -43,11 +43,9 @@ namespace PMS_Data
             return list;
         }
 
-        public LoaiChucNang LayDuLieu(int id)
+        public LoaiChucNang LayDuLieu(string id)
         {
-            List<SqlParameter> lstParameter = new List<SqlParameter>();
-            lstParameter.Add(new SqlParameter("@MaLoaiChucNang", id));
-            DataTable dt = DataProvider.ExecQueryStore("sp_LoaiChucNang_LayTheoMa", lstParameter);
+            DataTable dt = DataProvider.ExecQueryStore("sp_LoaiChucNang_LayTheoMa", new SqlParameter("@MaLoaiChucNang", id));
             if (dt != null && dt.Rows.Count > 0)
             {
                 return (LoaiChucNang)PhanTichDataRow(dt.Rows[0]);
@@ -55,7 +53,17 @@ namespace PMS_Data
             return null;
         }
 
-        public override void Them(PMSObject obj)
+        public override void Them(PMS_Object.PMSObject obj)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void Xoa(object ma)
+        {
+            throw new System.NotImplementedException();
+        }
+
+        public override void CapNhat(PMS_Object.PMSObject obj)
         {
             throw new System.NotImplementedException();
         }

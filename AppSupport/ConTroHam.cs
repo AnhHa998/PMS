@@ -1,4 +1,4 @@
-﻿namespace AppSupport
+﻿namespace XuLyChung
 {
     public abstract class ConTroHam
     {

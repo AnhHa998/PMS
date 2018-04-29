@@ -56,11 +56,31 @@ namespace PMS_Data
 
         public static DataTable ExecQueryStore(string storeName)
         {
+            if (storeName == null || storeName.Trim() == "") return null;
             try
             {
                 if (_connection == null) OpenConnection();
                 SqlCommand cmd = new SqlCommand(storeName, _connection);
                 cmd.CommandType = CommandType.StoredProcedure;
+                _adapter.SelectCommand = cmd;
+                DataTable dt = new DataTable();
+                _adapter.Fill(dt);
+                return dt;
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+
+        public static DataTable ExecQueryStore(string storeName, SqlParameter parameter)
+        {
+            try
+            {
+                if (_connection == null) OpenConnection();
+                SqlCommand cmd = new SqlCommand(storeName, _connection);
+                cmd.CommandType = CommandType.StoredProcedure;
+                cmd.Parameters.Add(parameter);
                 _adapter.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 _adapter.Fill(dt);
@@ -79,18 +99,20 @@ namespace PMS_Data
                 if (_connection == null) OpenConnection();
                 SqlCommand cmd = new SqlCommand(storeName, _connection);
                 cmd.CommandType = CommandType.StoredProcedure;
-                for (int i = 0; i < lstParameter.Count; i++)
-                {
-                    cmd.Parameters.AddWithValue(lstParameter[i].ToString(), lstParameter[i].Value.ToString());
-                }
+                cmd.Parameters.AddRange(lstParameter.ToArray());
+                //for (int i = 0; i < lstParameter.Count; i++)
+                //{
+                //    cmd.Parameters.AddWithValue(lstParameter[i].ToString(), lstParameter[i].Value.ToString());
+                    
+                //}
                 _adapter.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                 _adapter.Fill(dt);
                 return dt;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                throw;
+                throw ex;
             }
         }
 

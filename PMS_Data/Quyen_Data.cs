@@ -41,7 +41,7 @@ namespace PMS_Data
                 q = new Quyen();
                 //tk.ID = (int)dt.Rows[0]["ID"];
                 //tk.ThuTu = (int)dt.Rows[0]["ThuTu"];
-                //tk.ChucNangCha = LayDuLieu((int)dt.Rows[0]["ParentID"]);
+                //tk.ChucNangBacTren = LayDuLieu((int)dt.Rows[0]["ParentID"]);
                 //tk.TenQuyen = (string)dt.Rows[0]["TenQuyen"];
                 //tk.TenForm = (string)dt.Rows[0]["TenForm"];
                 //tk.KieuForm = (string)dt.Rows[0]["KieuForm"];

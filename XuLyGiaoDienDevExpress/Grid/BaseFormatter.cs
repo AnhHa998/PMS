@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace DevExpress.Common.Grid
+namespace XuLyGiaoDienDevExpress.Grid
 {
     public class BaseFormatter : IFormatProvider, ICustomFormatter
     {

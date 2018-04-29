@@ -5,14 +5,37 @@ using DevExpress.XtraGrid.Columns;
 using DevExpress.XtraGrid.Views.Base;
 using DevExpress.XtraGrid.Views.Grid;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace DevExpress.Common.Grid
+namespace XuLyGiaoDienDevExpress.Grid
 {
     public static class AppGridView
     {
+        #region Hap map
+        private static Hashtable HASH;
+
+        private static void InitHashMap()
+        {
+            if(HASH == null)
+            {
+                HASH = new Hashtable();
+                HASH.Add("RowSelect", GridMultiSelectMode.RowSelect);
+                HASH.Add("CellSelect", GridMultiSelectMode.CellSelect);
+                HASH.Add("CheckBoxRowSelect", GridMultiSelectMode.CheckBoxRowSelect);
+                HASH.Add("None", FixedStyle.None);
+                HASH.Add("Left", FixedStyle.Left);
+                HASH.Add("Right", FixedStyle.Right);
+                HASH.Add("Default", HorzAlignment.Default);
+                HASH.Add("Center", HorzAlignment.Center);
+                HASH.Add("Near", HorzAlignment.Near);
+                HASH.Add("Far", HorzAlignment.Far);
+            }
+        }
+        #endregion
+
         /// <summary>
         /// Init luoi
         /// </summary>
@@ -74,6 +97,49 @@ namespace DevExpress.Common.Grid
 
             for (int i = 0; i < grid.Columns.Count; i++)
                 grid.Columns[i].Visible = false;
+        }
+
+        
+        public static void Init (GridView grid, bool multiSelect, string multiSelectMode, bool showDetailButton, bool showGroupPanel
+            , int wordWrapHeader, string newItemRowText, string groupPanelText, string columnFields, string columnNames, string columnWidths
+            , string hideFields, string readOnlyFields, string fixedFields, string fixedStyle)
+        {
+            InitHashMap();
+
+            grid.OptionsView.ShowAutoFilterRow = true;
+            grid.OptionsSelection.MultiSelect = multiSelect;
+            grid.OptionsSelection.MultiSelectMode = (GridMultiSelectMode)HASH[multiSelectMode]; 
+            grid.OptionsView.ShowDetailButtons = showDetailButton;
+            grid.OptionsView.ShowGroupPanel = showGroupPanel;
+
+            ShowEditor(grid, NewItemRowPosition.Top);
+            if (newItemRowText != null && newItemRowText.Trim() != "")
+            {
+                ShowEditor(grid, NewItemRowPosition.Top);
+                grid.NewItemRowText = newItemRowText;
+            }
+
+            if (groupPanelText != null && groupPanelText.Trim() != "") grid.GroupPanelText = groupPanelText;
+
+            for (int i = 0; i < grid.Columns.Count; i++) grid.Columns[i].Visible = false;
+
+            string[] strArrFieldName = columnFields.Split(';');
+            string[] strArrCaption = columnNames.Split(';');
+
+            string[] strArrWidth = columnWidths.Split(';');
+            int[] iArrWidth = new int[strArrWidth.Length];
+            for (int i = 0; i < strArrWidth.Length; i++) iArrWidth[i] = int.Parse(strArrWidth[i]);
+
+            string[] strArrHideField = hideFields.Split(';');
+            string[] strArrReadOnlyField = readOnlyFields.Split(';');
+            string[] strArrFixedField = fixedFields.Split(';');
+
+            ShowField(grid, strArrFieldName, strArrCaption, iArrWidth);
+            HideField(grid, strArrHideField);
+            ReadOnlyColumn(grid, strArrReadOnlyField);
+            FixedField(grid, strArrFixedField, fixedStyle.Trim() == "" ? FixedStyle.None : (FixedStyle)HASH[fixedStyle]);
+
+            WordWrapHeader(grid, wordWrapHeader);
         }
 
         /// <summary>
@@ -159,9 +225,11 @@ namespace DevExpress.Common.Grid
         /// <param name="width"></param>
         public static void ShowField(GridView grid, string[] fieldName, string[] caption, int[] width)
         {
+            if (fieldName == null) return;
             grid.OptionsView.ColumnAutoWidth = false;
             for (int i = 0; i < fieldName.Length; i++)
             {
+                if (fieldName[i].Trim() == "") continue;
                 grid.Columns.AddField(fieldName[i]);
                 grid.Columns[fieldName[i]].Visible = true;
                 grid.Columns[fieldName[i]].Caption = caption[i];
@@ -215,9 +283,12 @@ namespace DevExpress.Common.Grid
         /// <param name="fieldName"></param>
         public static void ReadOnlyColumn(GridView grid, string[] fieldName)
         {
+            if (fieldName == null) return;
             for (int i = 0; i < fieldName.Length; i++)
+            {
+                if (fieldName[i].Trim() == "") continue;
                 grid.Columns[fieldName[i]].OptionsColumn.AllowEdit = false;
-
+            }
         }
 
         /// <summary>
@@ -260,8 +331,12 @@ namespace DevExpress.Common.Grid
         /// <param name="style"></param>
         public static void FixedField(GridView grid, string[] fieldName, FixedStyle style)
         {
+            if (fieldName == null) return;
             for (int i = 0; i < fieldName.Length; i++)
+            {
+                if (fieldName[i].Trim() == "") continue;
                 grid.Columns[fieldName[i]].Fixed = style;
+            }
         }
 
         /// <summary>
@@ -365,16 +440,18 @@ namespace DevExpress.Common.Grid
         /// <param name="grid"></param>
         /// <param name="fieldName"></param>
         /// <param name="align"></param>
-        public static void AlignHeader(GridView grid, string[] fieldName, DevExpress.Utils.HorzAlignment align)
+        public static void AlignHeader(GridView grid, string[] fieldName, HorzAlignment align)
         {
             for (int i = 0; i < fieldName.Length; i++)
                 grid.Columns[fieldName[i]].AppearanceHeader.TextOptions.HAlignment = align;
         }
 
-        public static void AlignHeader(GridView grid, List<string> fieldName, DevExpress.Utils.HorzAlignment align)
+        public static void AlignHeader(GridView grid, string fieldName, string style)
         {
-            for (int i = 0; i < fieldName.Count; i++)
-                grid.Columns[fieldName[i]].AppearanceHeader.TextOptions.HAlignment = align;
+            string[] arrFieldName = fieldName.Split(';');
+            HorzAlignment alignStyle = style.Trim() == "" ? HorzAlignment.Default : (HorzAlignment)HASH[style];
+            for (int i = 0; i < arrFieldName.Length; i++)
+                grid.Columns[arrFieldName[i]].AppearanceHeader.TextOptions.HAlignment = alignStyle;
         }
 
         /// <summary>
@@ -817,14 +894,22 @@ namespace DevExpress.Common.Grid
         /// <param name="fieldName"></param>
         public static void HideField(GridView grid, string[] fieldName)
         {
+             if (fieldName == null) return;
             for (int i = 0; i < fieldName.Length; i++)
+            {
+                if (fieldName[i].Trim() == "") continue;
                 grid.Columns[fieldName[i]].Visible = false;
+            }
         }
 
         public static void UnHideField(GridView grid, string[] fieldName)
         {
+            if (fieldName == null) return;
             for (int i = 0; i < fieldName.Length; i++)
+            {
+                if (fieldName[i].Trim() == "") continue;
                 grid.Columns[fieldName[i]].Visible = true;
+            }
         }
 
         /// <summary>
@@ -841,7 +926,6 @@ namespace DevExpress.Common.Grid
                 //grid.Columns[fieldName[i]].ColumnEdit.
                 //grid.Columns.View.SetColumnError(grid.Columns[i], string.Format("{0} không đúng định dạng");
             }
-
             //return true;
         }
 
@@ -933,6 +1017,14 @@ namespace DevExpress.Common.Grid
                 grid.SetRowCellValue(i, tenCotCheckBox, giongNhau);
             }
         }
-        
+
+        public static void WordWrapHeader(GridView grid, int height)
+        {
+            for (int i = 0; i < grid.Columns.Count; i++)
+                grid.Columns[i].AppearanceHeader.TextOptions.WordWrap = WordWrap.Wrap;
+            AutoHeightHelper a = new AutoHeightHelper(grid, height);
+            a.EnableColumnPanelAutoHeight();
+        }
+
     }
 }
